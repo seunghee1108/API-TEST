@@ -13,9 +13,6 @@ app.listen(port, () => {
   console.log(`서버가 http://localhost:${port}에서 실행 중입니다.`);
 });
 
-// Naver Open API 호출
-// const apiKey = 'YOUR_NAVER_API_KEY'; // 본인의 API 키로 대체하세요
-
 app.get('/search', async (req, res) => {
   const query = req.query.query;
 
