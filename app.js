@@ -20,13 +20,16 @@ app.get('/search', async (req, res) => {
     const response = await fetch(`https://openapi.naver.com/v1/search/blog.json?query=${query}`, {
       method: 'GET',
       headers: {
-        'X-Naver-Client-Id': 'BrLnfsWSIVhfuDuHi2o_', // 본인의 클라이언트 아이디로 대체
-        'X-Naver-Client-Secret': 'Ul3SmIdRfl', // 본인의 클라이언트 시크릿으로 대체
+        'X-Naver-Client-Id': 'BrLnfsWSIVhfuDuHi2o_', 
+        // 본인의 클라이언트 아이디로 대체
+        'X-Naver-Client-Secret': 'Ul3SmIdRfl',
+         // 본인의 클라이언트 시크릿으로 대체
       },
     });
 
     const data = await response.json();
-    res.json(data); // 검색 결과를 클라이언트에 JSON 형식으로 반환
+    res.json(data); 
+    // 검색 결과를 클라이언트에 JSON 형식으로 반환
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'API 요청 중 오류가 발생했습니다.' });
